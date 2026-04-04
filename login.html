@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login</title>
+
   <style>
-    /* Reset default styles */
     * {
       margin: 0;
       padding: 0;
@@ -14,67 +14,24 @@
     }
 
     body {
-      background-color: #f0f2f5;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #007BFF, #ff4fd8);
       display: flex;
       justify-content: center;
       align-items: center;
-      min-height: 100vh;
       padding: 20px;
     }
 
     .login-container {
-      background-color: #fff;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(15px);
       padding: 40px 30px;
-      border-radius: 12px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+      border-radius: 15px;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.2);
       max-width: 400px;
       width: 100%;
       text-align: center;
-    }
-
-    h1 {
-      font-size: 2rem;
-      color: #222;
-      margin-bottom: 20px;
-    }
-
-    form p {
-      font-size: 1rem;
-      color: #555;
-      margin-bottom: 20px;
-    }
-
-    input[type="text"],
-    input[type="password"] {
-      width: 100%;
-      padding: 12px 15px;
-      margin-bottom: 20px;
-      border-radius: 8px;
-      border: 1px solid #ccc;
-      font-size: 1rem;
-    }
-
-    input[type="text"]:focus,
-    input[type="password"]:focus {
-      outline: none;
-      border-color: #007BFF;
-      box-shadow: 0 0 5px rgba(0,123,255,0.3);
-    }
-
-    button {
-      width: 100%;
-      padding: 12px 0;
-      background-color: #007BFF;
       color: #fff;
-      border: none;
-      border-radius: 8px;
-      font-size: 1rem;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-
-    button:hover {
-      background-color: #0056b3;
     }
 
     .home-link {
@@ -83,14 +40,57 @@
     }
 
     .home-link a {
-      color: #555;
+      color: #eee;
       text-decoration: none;
       font-size: 0.95rem;
-      transition: color 0.3s ease;
+      transition: 0.3s;
     }
 
     .home-link a:hover {
+      color: #fff;
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 1rem;
+      margin-bottom: 25px;
+      color: #f0f0f0;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px 15px;
+      margin-bottom: 20px;
+      border-radius: 8px;
+      border: none;
+      font-size: 1rem;
+      outline: none;
+    }
+
+    input:focus {
+      box-shadow: 0 0 8px rgba(255,255,255,0.6);
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      border-radius: 8px;
+      border: none;
+      background: #fff;
       color: #007BFF;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s ease;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    }
+
+    button:hover {
+      transform: translateY(-2px);
     }
 
     .links {
@@ -99,20 +99,15 @@
     }
 
     .links a {
-      color: #007BFF;
-      text-decoration: none;
+      color: #fff;
+      text-decoration: underline;
       margin-left: 5px;
-      transition: color 0.3s ease;
-    }
-
-    .links a:hover {
-      color: #0056b3;
     }
 
     .footer-text {
       margin-top: 25px;
-      font-size: 0.9rem;
-      color: #777;
+      font-size: 0.85rem;
+      color: #ddd;
     }
 
     @media (max-width: 480px) {
@@ -123,29 +118,25 @@
       h1 {
         font-size: 1.8rem;
       }
-
-      input[type="text"],
-      input[type="password"] {
-        font-size: 0.95rem;
-      }
-
-      button {
-        font-size: 0.95rem;
-      }
     }
+
   </style>
 </head>
+
 <body>
 
   <div class="login-container">
+
     <div class="home-link">
       <a href="index.html">← Back to Home</a>
     </div>
 
-    <h1>Login</h1>
-    <form action="#" method="POST">
-      <input type="text" placeholder="Username" name="username" required>
-      <input type="password" placeholder="Password" name="password" required>
+    <h1>Welcome Back</h1>
+    <p>Log in to continue designing and exploring your style.</p>
+
+    <form>
+      <input type="text" placeholder="Username" required>
+      <input type="password" placeholder="Password" required>
       <button type="submit">Log In</button>
     </form>
 
@@ -155,8 +146,9 @@
     </div>
 
     <div class="footer-text">
-      <p>&copy; 2026 <a href ="https://orbitstudios26ng-spec.github.io/orbit-studios/">Orbit Studios</a>. All rights reserved.</p>
+            <p>&copy; 2026 <a href ="https://orbitstudios26ng-spec.github.io/orbit-studios/">Orbit Studios</a>. All rights reserved.</p>
     </div>
+
   </div>
 
 </body>
