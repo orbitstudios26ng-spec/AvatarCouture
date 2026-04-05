@@ -30,7 +30,7 @@ const HeroSection = () => {
             transition={{ delay: 0.4 }}
             className="text-gold font-body text-sm tracking-[0.3em] uppercase mb-6"
           >
-            AI-Powered Fashion Design
+            Avatar Couture by Orbit Studios
           </motion.p>
 
           <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-bold leading-[0.95] mb-8">
@@ -43,6 +43,10 @@ const HeroSection = () => {
 
           <p className="font-body text-cream-muted text-lg md:text-xl leading-relaxed mb-10 max-w-xl">
             Create custom outfits, preview them on a responsive avatar, explore curated collections, and use AI guidance to turn rough ideas into sharper fashion direction.
+          </p>
+
+          <p className="font-body text-sm md:text-base text-cream-muted/90 tracking-[0.18em] uppercase mb-10">
+            This website was made by Orbit Studios.
           </p>
 
           <div className="flex flex-wrap gap-4">

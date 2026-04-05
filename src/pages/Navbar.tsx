@@ -20,8 +20,13 @@ const Navbar = () => {
       className="fixed top-0 left-0 right-0 z-50 bg-glass border-b border-gold-subtle"
     >
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-        <a href="#" className="font-display text-2xl font-semibold text-gradient-gold tracking-wide">
-          ATELIER
+        <a href="#" className="flex flex-col leading-tight">
+          <span className="font-display text-2xl font-semibold text-gradient-gold tracking-wide">
+            Avatar Couture
+          </span>
+          <span className="font-body text-[0.65rem] uppercase tracking-[0.3em] text-cream-muted">
+            Made by Orbit Studios
+          </span>
         </a>
 
         <div className="hidden md:flex items-center gap-8">

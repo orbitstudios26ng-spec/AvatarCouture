@@ -1,6 +1,6 @@
-# Avatar Couture Orbit Studio
+# Avatar Couture
 
-Vite + React fashion design prototype with a live outfit studio, avatar preview, curated collections, and AI stylist chat.
+Vite + React fashion design prototype with a live outfit studio, avatar preview, curated collections, and AI stylist chat. Entire website created by Orbit Studios.
 
 ## Run
 

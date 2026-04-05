@@ -19,7 +19,7 @@ const FeaturesSection = () => (
         viewport={{ once: true }}
         className="text-center mb-16"
       >
-        <p className="text-gold font-body text-sm tracking-[0.3em] uppercase mb-4">Why Orbit Studio</p>
+        <p className="text-gold font-body text-sm tracking-[0.3em] uppercase mb-4">Built by Orbit Studios</p>
         <h2 className="font-display text-4xl md:text-5xl font-bold text-cream">
           Everything You <span className="italic text-gradient-gold">Need</span>
         </h2>
