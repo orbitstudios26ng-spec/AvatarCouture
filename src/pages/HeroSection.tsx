@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
 import heroImage from "@/assets/hero-fashion.jpg";
 
+const ORBIT_STUDIOS_URL = "https://orbit-studios-euzpitney-orbitstudios26ng-7759s-projects.vercel.app/";
+
 const HeroSection = () => {
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden">
@@ -30,7 +32,15 @@ const HeroSection = () => {
             transition={{ delay: 0.4 }}
             className="text-gold font-body text-sm tracking-[0.3em] uppercase mb-6"
           >
-            Avatar Couture by Orbit Studios
+            Avatar Couture by{" "}
+            <a
+              href={ORBIT_STUDIOS_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-gold-light transition-colors"
+            >
+              Orbit Studios
+            </a>
           </motion.p>
 
           <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-bold leading-[0.95] mb-8">
@@ -46,7 +56,16 @@ const HeroSection = () => {
           </p>
 
           <p className="font-body text-sm md:text-base text-cream-muted/90 tracking-[0.18em] uppercase mb-10">
-            This website was made by Orbit Studios.
+            This website was made by{" "}
+            <a
+              href={ORBIT_STUDIOS_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gold hover:text-gold-light transition-colors"
+            >
+              Orbit Studios
+            </a>
+            .
           </p>
 
           <div className="flex flex-wrap gap-4">

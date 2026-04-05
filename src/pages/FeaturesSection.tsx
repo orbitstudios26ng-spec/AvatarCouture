@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
 import { Layers, User, Sparkles, Palette, Share2, ShieldCheck } from "lucide-react";
 
+const ORBIT_STUDIOS_URL = "https://orbit-studios-euzpitney-orbitstudios26ng-7759s-projects.vercel.app/";
+
 const features = [
   { icon: Layers, title: "Layer System", desc: "Build outfits layer by layer with intuitive drag-and-drop." },
   { icon: User, title: "Custom Avatars", desc: "Create an avatar matching your body type, skin tone, and style." },
@@ -19,7 +21,17 @@ const FeaturesSection = () => (
         viewport={{ once: true }}
         className="text-center mb-16"
       >
-        <p className="text-gold font-body text-sm tracking-[0.3em] uppercase mb-4">Built by Orbit Studios</p>
+        <p className="text-gold font-body text-sm tracking-[0.3em] uppercase mb-4">
+          Built by{" "}
+          <a
+            href={ORBIT_STUDIOS_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-gold-light transition-colors"
+          >
+            Orbit Studios
+          </a>
+        </p>
         <h2 className="font-display text-4xl md:text-5xl font-bold text-cream">
           Everything You <span className="italic text-gradient-gold">Need</span>
         </h2>

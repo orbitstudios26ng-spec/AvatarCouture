@@ -2,6 +2,8 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 
+const ORBIT_STUDIOS_URL = "https://orbit-studios-euzpitney-orbitstudios26ng-7759s-projects.vercel.app/";
+
 const navItems = [
   { label: "Design Studio", href: "#design-studio" },
   { label: "Avatar", href: "#avatar" },
@@ -20,14 +22,19 @@ const Navbar = () => {
       className="fixed top-0 left-0 right-0 z-50 bg-glass border-b border-gold-subtle"
     >
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-        <a href="#" className="flex flex-col leading-tight">
-          <span className="font-display text-2xl font-semibold text-gradient-gold tracking-wide">
+        <div className="flex flex-col leading-tight">
+          <a href="#" className="font-display text-2xl font-semibold text-gradient-gold tracking-wide">
             Avatar Couture
-          </span>
-          <span className="font-body text-[0.65rem] uppercase tracking-[0.3em] text-cream-muted">
+          </a>
+          <a
+            href={ORBIT_STUDIOS_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-body text-[0.65rem] uppercase tracking-[0.3em] text-cream-muted hover:text-gold transition-colors"
+          >
             Made by Orbit Studios
-          </span>
-        </a>
+          </a>
+        </div>
 
         <div className="hidden md:flex items-center gap-8">
           {navItems.map((item) => (
