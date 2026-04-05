@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Avatar Couture | Avatar Studio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#eeebf6;--panel:rgba(255,255,255,.82);--panel2:#fff;--text:#1b1824;--muted:#69657b;--line:rgba(35,29,56,.1);--p:#6f57ff;--p2:#4f39d1;--s:#ff9076;--shadow:0 24px 60px rgba(35,26,73,.12);--r:28px;--r2:18px;--shell:min(1220px,calc(100vw - 28px))}
+    *{box-sizing:border-box}body{margin:0;min-height:100vh;font-family:Inter,sans-serif;color:var(--text);background:radial-gradient(circle at top left,rgba(161,153,255,.35),transparent 28%),linear-gradient(180deg,#f7f4fb 0%,#ece8f4 50%,#f8f6fb 100%)}body:before{content:"";position:fixed;inset:0;pointer-events:none;background:linear-gradient(rgba(255,255,255,.18) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.18) 1px,transparent 1px);background-size:42px 42px;opacity:.32}
+    a{text-decoration:none;color:inherit}button{font:inherit}svg{display:block;max-width:100%}
+    .shell{width:var(--shell);margin:0 auto;padding:22px 0 34px;position:relative;z-index:1}
+    .topbar,.panel,.saves{backdrop-filter:blur(16px)}
+    .topbar{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px 22px;border-radius:999px;background:rgba(255,255,255,.74);border:1px solid var(--line);box-shadow:var(--shadow)}
+    .brand{display:flex;align-items:center;gap:14px}.mark{width:48px;height:48px;display:grid;place-items:center;border-radius:16px;background:linear-gradient(135deg,var(--p),var(--s));color:#fff;font-weight:800;letter-spacing:.08em;box-shadow:0 14px 26px rgba(79,57,209,.2)}
+    .brand small,.nav a{color:var(--muted)}.brand strong{display:block}.nav{display:flex;gap:10px;flex-wrap:wrap;align-items:center}.nav a{padding:10px 14px;border-radius:999px}.nav .cta{background:linear-gradient(135deg,var(--p),var(--p2));color:#fff;font-weight:700}
+    .layout{margin-top:22px;display:grid;grid-template-columns:320px minmax(0,1fr);gap:20px}
+    .panel{border-radius:var(--r);border:1px solid var(--line);box-shadow:var(--shadow);background:var(--panel);padding:24px}
+    .panel,.main,.stage,.stage-body,.cards,.content,.group,.tab-panel{min-width:0}
+    .eyebrow{margin:0 0 10px;color:var(--p2);font-size:.78rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase}
+    h1,h2{margin:0;font-family:"Playfair Display",serif;line-height:1.03}h1{font-size:clamp(2rem,3vw,2.7rem)}h2{font-size:clamp(1.9rem,2.7vw,2.5rem)}
+    .muted{margin:12px 0 0;color:var(--muted);line-height:1.7}
+    .tabs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-top:22px;padding:8px;border-radius:18px;background:rgba(255,255,255,.68);border:1px solid rgba(79,57,209,.08)}
+    .tab{border:0;background:transparent;min-height:42px;border-radius:12px;color:var(--muted);font-weight:700;cursor:pointer;padding:8px 10px;white-space:normal;word-break:break-word;line-height:1.15}.tab.active{background:linear-gradient(135deg,var(--p),var(--p2));color:#fff;box-shadow:0 12px 22px rgba(79,57,209,.22)}
+    .tab-panel{display:none;margin-top:18px}.tab-panel.active{display:block}
+    .group{margin-top:16px}.group strong{display:block;margin-bottom:10px}.chips{display:flex;flex-wrap:wrap;gap:10px}.chip{padding:10px 12px;border:1px solid rgba(79,57,209,.12);background:rgba(255,255,255,.9);border-radius:14px;color:var(--text);cursor:pointer;max-width:100%;white-space:normal;word-break:break-word;text-align:left}.chip.active{background:rgba(79,57,209,.1);color:var(--p2);font-weight:700}
+    .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}.btn{border:1px solid transparent;min-height:46px;padding:0 18px;border-radius:999px;cursor:pointer;font-weight:700}.primary{background:linear-gradient(135deg,var(--p),var(--p2));color:#fff}.secondary{background:rgba(255,255,255,.88);border-color:rgba(79,57,209,.1)}
+    .main{display:grid;gap:20px}.stage{border-radius:var(--r);overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow);background:linear-gradient(180deg,rgba(255,255,255,.8),rgba(241,237,248,.86))}
+    .stage-head{display:flex;justify-content:space-between;gap:18px;align-items:end;padding:24px 24px 0}.stage-head p{margin:10px 0 0;color:var(--muted);line-height:1.7;max-width:56ch}
+    .stage-body{padding:18px 24px 24px;display:grid;grid-template-columns:minmax(0,1fr) 280px;gap:18px}
+    .phone{position:relative;overflow:hidden;min-height:650px;border-radius:24px;border:1px solid rgba(79,57,209,.08);background:linear-gradient(180deg,#7e7d84 0%,#b1b0b7 48%,#ebe9ee 100%)}
+    .phone:before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(circle at 50% 26%,rgba(255,255,255,.34),transparent 21%),linear-gradient(180deg,rgba(0,0,0,.14),transparent 18%,transparent 75%,rgba(255,255,255,.16) 100%)}
+    .phonebar{display:flex;justify-content:space-between;align-items:center;padding:12px 14px;position:relative;z-index:2}.mini{display:flex;gap:8px;align-items:center}.bubble{width:30px;height:30px;border-radius:50%;display:grid;place-items:center;background:rgba(23,21,31,.56);color:#fff;font-weight:700}.snap{padding:8px 10px;border-radius:999px;background:rgba(23,21,31,.56);color:#fff;font-size:.76rem;font-weight:700}
+    .canvas{width:min(410px,calc(100% - 24px));margin:6px auto 0;position:relative;z-index:1}.caption{position:absolute;left:16px;bottom:110px;z-index:2;color:#fff;font-size:.84rem;text-shadow:0 2px 10px rgba(0,0,0,.4)}
+    .bottom{position:absolute;inset:auto 0 0;padding:14px;z-index:2;background:linear-gradient(180deg,transparent 0%,rgba(15,14,20,.2) 12%,rgba(15,14,20,.86) 100%)}.icons{display:flex;justify-content:space-around;color:#fff;font-size:.8rem;margin-bottom:14px}.icons span{display:grid;justify-items:center;gap:6px}.dot{width:28px;height:28px;border-radius:50%;display:grid;place-items:center;background:rgba(255,255,255,.14)}
+    .tray{border-radius:22px;background:rgba(255,255,255,.97);padding:14px}.trayhead{display:flex;justify-content:space-between;gap:10px;margin-bottom:10px}.traygrid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.trayitem{aspect-ratio:.8/1;border-radius:14px;border:1px solid rgba(79,57,209,.08);background:linear-gradient(180deg,#f7f5fb 0%,#eeebf6 100%)}
+    .cards{display:grid;gap:16px}.card{padding:18px;border-radius:18px;background:rgba(255,255,255,.9);border:1px solid rgba(79,57,209,.08)}.card strong{display:block;margin-bottom:8px}.card p{margin:0;color:var(--muted);line-height:1.64;font-size:.94rem}.meter{height:10px;margin-top:12px;border-radius:999px;background:rgba(79,57,209,.1);overflow:hidden}.meter span{display:block;height:100%;border-radius:inherit;background:linear-gradient(90deg,#8fd3ff,var(--p))}
+    .saves{margin-top:22px;padding:26px;border-radius:var(--r);border:1px solid var(--line);background:rgba(255,255,255,.84);box-shadow:var(--shadow)}.saveshead{display:flex;justify-content:space-between;align-items:end;gap:16px;margin-bottom:18px}.saveshead p{margin:10px 0 0;color:var(--muted);line-height:1.7;max-width:58ch}
+    .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}.save{overflow:hidden;border-radius:20px;border:1px solid rgba(79,57,209,.08);background:var(--panel2);box-shadow:var(--shadow)}.thumb{aspect-ratio:.82/1;background:linear-gradient(180deg,#7d7b83 0%,#b3b2b9 48%,#efedf2 100%);padding:10px;display:grid;place-items:center}.thumb svg{width:88%;max-width:170px;height:auto}.content{padding:16px;display:grid;gap:10px}.row{display:flex;justify-content:space-between;gap:12px;align-items:start}.content p{margin:0;color:var(--muted);line-height:1.62;font-size:.93rem}.labels{display:flex;flex-wrap:wrap;gap:8px}.label{padding:9px 11px;border-radius:12px;border:1px solid rgba(79,57,209,.1);background:#fff;font-size:.88rem;color:var(--text)}
+    @media (max-width:1120px){.layout{grid-template-columns:1fr}.stage-body{grid-template-columns:1fr}.grid{grid-template-columns:repeat(2,1fr)}}
+    @media (max-width:760px){.shell{width:min(100vw - 20px,100%)}.topbar,.stage-head,.saveshead{flex-direction:column;align-items:flex-start}.tabs{grid-template-columns:1fr}.traygrid,.grid{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <header class="topbar">
+      <a class="brand" href="index.html"><span class="mark">AC</span><span><strong>Avatar Couture</strong><small>A project by Orbit Studios</small></span></a>
+      <nav class="nav"><a href="index.html">Home</a><a href="#studio">Studio</a><a href="#saves">Saves</a><a class="cta" href="signup.html">Save Your Look</a></nav>
+    </header>
+
+    <main class="layout" id="studio">
+      <aside class="panel">
+        <p class="eyebrow">Avatar Studio</p>
+        <h1>Style a cleaner block avatar.</h1>
+        <p class="muted">This now leans into the blockier game-avatar direction from your new references, while keeping the studio structure, save flow, and polish from the previous version.</p>
+
+        <div class="tabs">
+          <button class="tab active" data-tab="customize">Customize</button>
+          <button class="tab" data-tab="clothing">Clothing</button>
+          <button class="tab" data-tab="ai">AI Guide</button>
+          <button class="tab" data-tab="saved">Saved</button>
+        </div>
+
+        <section class="tab-panel active" data-panel="customize">
+          <div class="group"><strong>Skin Tone</strong><div class="chips" id="skin"></div></div>
+          <div class="group"><strong>Hair Color</strong><div class="chips" id="hair"></div></div>
+          <div class="group"><strong>Hair Style</strong><div class="chips" id="style"></div></div>
+        </section>
+
+        <section class="tab-panel" data-panel="clothing">
+          <div class="group"><strong>Top</strong><div class="chips" id="top"></div></div>
+          <div class="group"><strong>Bottom</strong><div class="chips" id="bottom"></div></div>
+          <div class="group"><strong>Shoes</strong><div class="chips" id="shoes"></div></div>
+          <div class="group"><strong>Pose</strong><div class="chips" id="pose"></div></div>
+        </section>
+
+        <section class="tab-panel" data-panel="ai">
+          <div class="group"><strong>AI Style Suggestions</strong><div class="chips" id="presets"></div></div>
+          <p class="muted">These presets are now based on the block-avatar references you shared, not the earlier Snapchat direction.</p>
+        </section>
+
+        <section class="tab-panel" data-panel="saved">
+          <p class="muted">Use the save button to store the current avatar in the bottom Saves gallery.</p>
+        </section>
+
+        <div class="actions">
+          <button class="btn secondary" id="randomize">Randomize</button>
+          <button class="btn primary" id="save">Save Current Look</button>
+        </div>
+      </aside>
+
+      <div class="main">
+        <section class="stage">
+          <div class="stage-head">
+            <div>
+              <p class="eyebrow">Your Avatar</p>
+              <h2>Blocky, sharper, and closer to your new refs.</h2>
+              <p>The avatar now aims for a more game-like body build with a cylindrical head, box torso, chunkier limbs, and simpler face styling inspired by the new images.</p>
+            </div>
+            <button class="btn primary" id="featured">Apply Featured Style</button>
+          </div>
+
+          <div class="stage-body">
+            <div class="phone">
+              <div class="phonebar">
+                <div class="mini"><span class="bubble">&times;</span></div>
+                <div class="mini"><span class="bubble">&#8682;</span><span class="bubble">&#9673;</span><span class="snap">Snap</span></div>
+              </div>
+              <div class="canvas" id="avatar"></div>
+              <div class="caption" id="caption">Every fit starts with a better avatar.</div>
+              <div class="bottom">
+                <div class="icons">
+                  <span><i class="dot">&#9829;</i>Fashion</span>
+                  <span><i class="dot">&#9786;</i>Avatar</span>
+                  <span><i class="dot">&#10026;</i>Style</span>
+                  <span><i class="dot">&#9733;</i>Saved</span>
+                </div>
+                <div class="tray">
+                  <div class="trayhead"><strong>Try a new look</strong><small style="color:var(--muted)">Swipe-worthy styles</small></div>
+                  <div class="traygrid"><div class="trayitem"></div><div class="trayitem"></div><div class="trayitem"></div><div class="trayitem"></div></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="cards">
+              <article class="card"><strong>Current vibe</strong><p id="vibe">Block-avatar styling with cleaner silhouette reads and stronger game-character proportions.</p></article>
+              <article class="card"><strong>AI confidence</strong><p>This look balances recognizable block structure with enough styling detail to still feel custom.</p><div class="meter"><span id="meter" style="width:84%"></span></div></article>
+              <article class="card"><strong>Studio note</strong><p id="note">Use darker tops, cleaner denim, and simpler hair shapes when you want the block form to stay readable.</p></article>
+            </div>
+          </div>
+        </section>
+
+        <section class="saves" id="saves">
+          <div class="saveshead">
+            <div>
+              <p class="eyebrow">Saves</p>
+              <h2>Saved looks and avatar variations</h2>
+              <p>This bottom section replaces the old static save area and acts like the saved gallery from the React app you pasted.</p>
+            </div>
+            <button class="btn secondary" id="clear">Clear Saves</button>
+          </div>
+          <div class="grid" id="saveGrid"></div>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    const state={skinTone:"medium",hairColor:"brown",hairStyle:"spiky",top:"blue-tee",bottom:"olive-pants",shoes:"white-sneakers",pose:"neutral",caption:"Block avatar, but make it styled.",vibe:"Block-avatar styling with cleaner silhouette reads and stronger game-character proportions.",note:"Use darker tops, cleaner denim, and simpler hair shapes when you want the block form to stay readable.",confidence:84};
+    const skin={fair:{base:"#f7d3c1",shadow:"#e6b8a1"},medium:{base:"#d4a173",shadow:"#b27d52"},tan:{base:"#bb8358",shadow:"#97633f"},deep:{base:"#87583d",shadow:"#633d28"}};
+    const hair={black:{base:"#1f1b22",hi:"#40384a"},brown:{base:"#6e4b32",hi:"#9b704d"},darkBrown:{base:"#3c2b24",hi:"#674c42"},blonde:{base:"#d8c189",hi:"#efdeac"}};
+    const tops={"blue-tee":{label:"Blue Tee",fill:"#0a67b8",accent:"#094f8b"},"black-jacket":{label:"Black Jacket",fill:"#22252c",accent:"#12141a"},"gray-hoodie":{label:"Gray Hoodie",fill:"#8f949e",accent:"#6f757f"},"white-shirt":{label:"White Shirt",fill:"#f4f5f8",accent:"#d6d9e0"}};
+    const bottoms={"olive-pants":{label:"Olive Pants",fill:"#7f9153",accent:"#647441"},"gray-jeans":{label:"Gray Jeans",fill:"#8e9098",accent:"#767983"},"blue-jeans":{label:"Blue Jeans",fill:"#5b78a4",accent:"#476188"},"black-pants":{label:"Black Pants",fill:"#29272f",accent:"#1a1820"}};
+    const shoes={"white-sneakers":{label:"White Sneakers",fill:"#f8f8fb",sole:"#d8d8df"},"brown-boots":{label:"Brown Boots",fill:"#8b6348",sole:"#694a35"},"block-shoes":{label:"Block Shoes",fill:"#2d2d35",sole:"#1a1a1f"}};
+    const poses={neutral:"Neutral",wave:"Wave",power:"Power Stance"};
+    const presets={
+      classicBlock:{label:"Classic Block",data:{skinTone:"medium",hairColor:"brown",hairStyle:"spiky",top:"blue-tee",bottom:"olive-pants",shoes:"white-sneakers",pose:"neutral",caption:"Classic block style.",vibe:"Blue-and-olive block styling inspired directly by the classic avatar reference.",note:"This is the cleanest baseline if you want a recognizable starter block avatar.",confidence:90}},
+      blackStreet:{label:"Black Street",data:{skinTone:"medium",hairColor:"black",hairStyle:"spiky",top:"black-jacket",bottom:"black-pants",shoes:"block-shoes",pose:"power",caption:"Sharper and darker.",vibe:"A stronger silhouette with higher contrast and heavier game-avatar energy.",note:"Darker outerwear makes the torso silhouette feel more defined and modern.",confidence:84}},
+      grayProto:{label:"Gray Prototype",data:{skinTone:"fair",hairColor:"darkBrown",hairStyle:"cap",top:"gray-hoodie",bottom:"gray-jeans",shoes:"block-shoes",pose:"neutral",caption:"Prototype build.",vibe:"A mannequin-like avatar setup useful for testing proportions and form.",note:"Use this when you want to evaluate shape before styling details.",confidence:79}},
+      cleanWhite:{label:"Clean White",data:{skinTone:"fair",hairColor:"blonde",hairStyle:"cap",top:"white-shirt",bottom:"blue-jeans",shoes:"white-sneakers",pose:"wave",caption:"Bright block fit.",vibe:"Cleaner, lighter styling with simple block geometry and softer contrast.",note:"This works well when you want the head and outfit colors to feel cleaner and brighter.",confidence:86}}
+    };
+    const saves=[]; const avatar=document.getElementById("avatar"),caption=document.getElementById("caption"),vibe=document.getElementById("vibe"),note=document.getElementById("note"),meter=document.getElementById("meter"),saveGrid=document.getElementById("saveGrid");
+    function btnRow(id,obj,keyLabel){const el=document.getElementById(id);el.innerHTML="";Object.entries(obj).forEach(([k,v])=>{const b=document.createElement("button");b.className="chip";b.dataset.type=id;b.dataset.value=k;b.textContent=v.label||v;el.appendChild(b)})}
+    function avatarSvg(cfg){const s=skin[cfg.skinTone],h=hair[cfg.hairColor],t=tops[cfg.top],b=bottoms[cfg.bottom],sh=shoes[cfg.shoes];const wave=cfg.pose==="wave",power=cfg.pose==="power";
+      const leftArm=wave?`<g transform="rotate(-22 125 285)"><rect x="100" y="248" width="34" height="118" rx="8" fill="url(#skin)"/><rect x="100" y="352" width="34" height="28" rx="8" fill="${s.base}"/></g>`:`<rect x="98" y="248" width="34" height="${power?144:128}" rx="8" fill="url(#skin)"/><rect x="98" y="${power?378:362}" width="34" height="30" rx="8" fill="${s.base}"/>`;
+      const rightArm=wave?`<rect x="268" y="248" width="34" height="128" rx="8" fill="url(#skin)"/><rect x="268" y="362" width="34" height="30" rx="8" fill="${s.base}"/>`:`<rect x="268" y="248" width="34" height="${power?144:128}" rx="8" fill="url(#skin)"/><rect x="268" y="${power?378:362}" width="34" height="30" rx="8" fill="${s.base}"/>`;
+      const hairSvg=cfg.hairStyle==="cap"?`<rect x="142" y="88" width="116" height="30" rx="12" fill="${h.base}"/><path d="M136 110 C150 70 250 70 264 110 L256 130 C234 118 220 114 200 114 C180 114 166 118 144 130 Z" fill="${h.base}"/><path d="M150 88 Q200 68 250 88" stroke="${h.hi}" stroke-width="6" opacity=".45" fill="none"/>`:cfg.hairStyle==="long"?`<rect x="140" y="82" width="120" height="40" rx="16" fill="${h.base}"/><path d="M140 110 C138 170 142 254 150 330 L170 330 C170 248 170 176 176 130 L224 130 C230 176 230 248 230 330 L250 330 C258 254 262 170 260 110 Z" fill="url(#hair)"/><path d="M150 90 Q200 60 250 90" stroke="${h.hi}" stroke-width="8" opacity=".4" fill="none"/>`:cfg.hairStyle==="spiky"?`<path d="M142 116 L154 82 L170 104 L184 70 L200 98 L216 68 L232 104 L246 84 L258 116 Z" fill="${h.base}"/><path d="M148 118 Q200 96 252 118 L246 138 C228 128 216 124 200 124 C184 124 172 128 154 138 Z" fill="${h.base}"/>`:`<rect x="142" y="86" width="116" height="34" rx="12" fill="${h.base}"/><path d="M142 116 C150 154 250 154 258 116 Z" fill="${h.base}"/>`;
+      const faceDetails=`<circle cx="184" cy="148" r="5.5" fill="#1a1a1f"/><circle cx="216" cy="148" r="5.5" fill="#1a1a1f"/><path d="M172 130 Q184 124 196 130" stroke="#5b4333" stroke-width="4" fill="none" stroke-linecap="round"/><path d="M204 130 Q216 124 228 130" stroke="#5b4333" stroke-width="4" fill="none" stroke-linecap="round"/><path d="M186 178 Q200 190 214 178" stroke="#5b4333" stroke-width="4" fill="none" stroke-linecap="round"/>`;
+      return `<svg viewBox="0 0 400 660" aria-label="Avatar preview"><defs><linearGradient id="skin" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="${s.base}"/><stop offset="100%" stop-color="${s.shadow}"/></linearGradient><linearGradient id="hair" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="${h.hi}"/><stop offset="100%" stop-color="${h.base}"/></linearGradient></defs><ellipse cx="200" cy="620" rx="112" ry="18" fill="rgba(35,35,46,.16)"/><g>${leftArm}${rightArm}<rect x="165" y="202" width="70" height="44" rx="8" fill="url(#skin)"/><rect x="124" y="242" width="152" height="122" rx="10" fill="${t.fill}"/><path d="M124 270 H276" stroke="${t.accent}" stroke-width="10" opacity=".48"/><path d="M124 242 L146 218 L165 218 L165 242 Z" fill="${cfg.top==='black-jacket'?'#101217':t.accent}"/><path d="M276 242 L254 218 L235 218 L235 242 Z" fill="${cfg.top==='black-jacket'?'#101217':t.accent}"/><rect x="146" y="364" width="108" height="18" rx="6" fill="rgba(255,255,255,.32)"/><rect x="142" y="382" width="44" height="196" rx="8" fill="${b.fill}"/><rect x="214" y="382" width="44" height="196" rx="8" fill="${b.fill}"/><rect x="142" y="382" width="44" height="14" rx="4" fill="${b.accent}" opacity=".5"/><rect x="214" y="382" width="44" height="14" rx="4" fill="${b.accent}" opacity=".5"/><rect x="138" y="576" width="54" height="24" rx="8" fill="${sh.fill}"/><rect x="208" y="576" width="54" height="24" rx="8" fill="${sh.fill}"/><rect x="138" y="595" width="54" height="10" rx="4" fill="${sh.sole}"/><rect x="208" y="595" width="54" height="10" rx="4" fill="${sh.sole}"/><rect x="152" y="72" width="96" height="122" rx="16" fill="url(#skin)"/>${faceDetails}${hairSvg}</g></svg>`}
+    function active(){document.querySelectorAll(".chip").forEach(c=>{const map={skin:"skinTone",hair:"hairColor",style:"hairStyle",top:"top",bottom:"bottom",shoes:"shoes",pose:"pose"};const key=map[c.dataset.type]||c.dataset.type;c.classList.toggle("active",state[key]===c.dataset.value)})}
+    function render(){avatar.innerHTML=avatarSvg(state);caption.textContent=state.caption;vibe.textContent=state.vibe;note.textContent=state.note;meter.style.width=state.confidence+"%";active()}
+    function renderSaves(){if(!saves.length){saveGrid.innerHTML=`<article class="save" style="grid-column:1/-1;padding:28px"><div class="content"><div class="row"><strong>No saved looks yet</strong><small style="color:var(--muted)">Start styling</small></div><p>Save your favorite avatar combinations here and build your own Snapchat-inspired look gallery.</p></div></article>`;return}
+      saveGrid.innerHTML=saves.map((s,i)=>`<article class="save"><div class="thumb">${avatarSvg(s.state)}</div><div class="content"><div class="row"><strong>${s.name}</strong><small style="color:var(--muted)">${s.tag}</small></div><p>${s.note}</p><div class="labels"><span class="label">${tops[s.state.top].label}</span><span class="label">${bottoms[s.state.bottom].label}</span></div><div class="actions" style="margin-top:0"><button class="btn secondary" data-load="${i}">Load</button><button class="btn primary" data-del="${i}">Delete</button></div></div></article>`).join("")}
+    function fill(id,obj,type){const el=document.getElementById(id);el.innerHTML="";Object.entries(obj).forEach(([k,v])=>{const b=document.createElement("button");b.className="chip";b.dataset.type=type;b.dataset.value=k;b.textContent=v.label||v;el.appendChild(b)})}
+    fill("skin",{fair:"Fair",medium:"Medium",tan:"Tan",deep:"Deep"},"skin");fill("hair",{black:"Black",brown:"Brown",darkBrown:"Dark Brown",blonde:"Blonde"},"hair");fill("style",{long:"Long",spiky:"Spiky",cap:"Cap Cut"},"style");fill("top",tops,"top");fill("bottom",bottoms,"bottom");fill("shoes",shoes,"shoes");fill("pose",poses,"pose");fill("presets",Object.fromEntries(Object.entries(presets).map(([k,v])=>[k,v.label])),"preset");
+    document.addEventListener("click",e=>{const t=e.target;
+      if(t.matches(".tab")){document.querySelectorAll(".tab").forEach(b=>b.classList.toggle("active",b===t));document.querySelectorAll(".tab-panel").forEach(p=>p.classList.toggle("active",p.dataset.panel===t.dataset.tab))}
+      if(t.matches(".chip")){if(t.dataset.type==="preset"){Object.assign(state,presets[t.dataset.value].data)}else{const map={skin:"skinTone",hair:"hairColor",style:"hairStyle"};state[map[t.dataset.type]||t.dataset.type]=t.dataset.value}render()}
+      if(t.matches("[data-load]")){Object.assign(state,saves[Number(t.dataset.load)].state);render()}
+      if(t.matches("[data-del]")){saves.splice(Number(t.dataset.del),1);renderSaves()}
+    });
+    document.getElementById("featured").onclick=()=>{Object.assign(state,presets.classicBlock.data);render()};
+    document.getElementById("randomize").onclick=()=>{const pick=o=>Object.keys(o)[Math.floor(Math.random()*Object.keys(o).length)];state.skinTone=pick(skin);state.hairColor=pick(hair);state.hairStyle=pick({long:1,spiky:1,cap:1});state.top=pick(tops);state.bottom=pick(bottoms);state.shoes=pick(shoes);state.pose=pick(poses);state.caption="Fresh avatar energy.";state.vibe="A randomized block-avatar look for testing stronger combinations.";state.note="Use randomize when you want to experiment with cleaner block silhouettes.";state.confidence=76+Math.floor(Math.random()*19);render()};
+    document.getElementById("save").onclick=()=>{saves.unshift({name:`Look ${String(saves.length+1).padStart(2,"0")}`,tag:saves.length?"Saved":"New",note:state.vibe,state:{...state}});renderSaves();document.getElementById("saves").scrollIntoView({behavior:"smooth"})};
+    document.getElementById("clear").onclick=()=>{saves.length=0;renderSaves()};
+    render();renderSaves();
+  </script>
+</body>
+</html>

@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 20 10% 5%;
+    --foreground: 40 30% 92%;
+
+    --card: 20 8% 8%;
+    --card-foreground: 40 30% 92%;
+
+    --popover: 20 8% 10%;
+    --popover-foreground: 40 30% 92%;
+
+    --primary: 40 50% 70%;
+    --primary-foreground: 20 10% 5%;
+
+    --secondary: 20 8% 14%;
+    --secondary-foreground: 40 30% 85%;
+
+    --muted: 20 6% 12%;
+    --muted-foreground: 30 10% 55%;
+
+    --accent: 40 50% 70%;
+    --accent-foreground: 20 10% 5%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 40 30% 92%;
+
+    --border: 20 8% 18%;
+    --input: 20 8% 18%;
+    --ring: 40 50% 70%;
+
+    --radius: 0.5rem;
+
+    --gold: 40 50% 70%;
+    --gold-light: 40 60% 82%;
+    --cream: 40 30% 92%;
+    --cream-muted: 30 15% 70%;
+    --noir: 20 10% 5%;
+    --noir-light: 20 8% 10%;
+    --noir-card: 20 8% 8%;
+
+    --font-display: 'Playfair Display', serif;
+    --font-body: 'Inter', sans-serif;
+
+    --sidebar-background: 20 8% 8%;
+    --sidebar-foreground: 40 30% 92%;
+    --sidebar-primary: 40 50% 70%;
+    --sidebar-primary-foreground: 20 10% 5%;
+    --sidebar-accent: 20 8% 14%;
+    --sidebar-accent-foreground: 40 30% 92%;
+    --sidebar-border: 20 8% 18%;
+    --sidebar-ring: 40 50% 70%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+  }
+}
+
+@layer utilities {
+  .text-gradient-gold {
+    background: linear-gradient(135deg, hsl(40 50% 70%), hsl(40 60% 82%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .border-gold-subtle {
+    border-color: hsl(40 50% 70% / 0.2);
+  }
+
+  .bg-glass {
+    background: hsl(20 8% 8% / 0.8);
+    backdrop-filter: blur(12px);
+  }
+
+  .glow-gold {
+    box-shadow: 0 0 40px hsl(40 50% 70% / 0.15);
+  }
+}

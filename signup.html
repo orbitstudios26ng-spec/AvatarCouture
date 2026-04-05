@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Create your Avatar Couture account and start designing custom digital fashion experiences.">
+  <title>Avatar Couture | Create Account</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="theme-auth">
+  <main class="auth-layout signup-layout">
+    <section class="auth-side reveal">
+      <a href="index.html" class="back-link">&larr; Back to Home</a>
+      <p class="eyebrow">Membership Onboarding</p>
+      <h1>Create your space and start building looks with intention.</h1>
+      <p class="auth-copy">
+        Join Avatar Couture to save concepts, revisit experiments, and turn scattered fashion ideas into a more focused creative practice.
+      </p>
+
+      <div class="auth-points">
+        <div>
+          <strong>Save your direction</strong>
+          <span>Keep your concepts in one place and revisit them as your style evolves.</span>
+        </div>
+        <div>
+          <strong>Build a signature</strong>
+          <span>Explore combinations with structure instead of losing great ideas in the process.</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="auth-card reveal">
+      <div class="auth-card-inner">
+        <p class="form-tag">New Account</p>
+        <h2>Create Account</h2>
+        <p class="form-copy">Join Avatar Couture and start designing your own fashion experience.</p>
+
+        <form class="auth-form" action="body.html" method="get" data-redirect-home="true">
+          <label>
+            <span>Full Name</span>
+            <input type="text" name="full-name" placeholder="Enter your full name" required>
+          </label>
+
+          <label>
+            <span>Email Address</span>
+            <input type="email" name="email" placeholder="Enter your email address" required>
+          </label>
+
+          <label>
+            <span>Username</span>
+            <input type="text" name="username" placeholder="Choose a username" required>
+          </label>
+
+          <label>
+            <span>Password</span>
+            <div class="password-field">
+              <input type="password" name="password" placeholder="Create a password" required>
+              <button type="button" class="toggle-password" aria-label="Show password">Show</button>
+            </div>
+          </label>
+
+          <label>
+            <span>Confirm Password</span>
+            <div class="password-field">
+              <input type="password" name="confirm-password" placeholder="Confirm your password" required>
+              <button type="button" class="toggle-password" aria-label="Show password">Show</button>
+            </div>
+          </label>
+
+          <button type="submit" class="button button-primary button-block">Sign Up</button>
+        </form>
+
+        <p class="auth-switch">Already have an account? <a href="login.html">Log in</a></p>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

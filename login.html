@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Access your Avatar Couture account and continue building digital fashion concepts.">
+  <title>Avatar Couture | Log In</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="theme-auth">
+  <main class="auth-layout">
+    <section class="auth-side reveal">
+      <a href="index.html" class="back-link">&larr; Back to Home</a>
+      <p class="eyebrow">Avatar Couture Access</p>
+      <h1>Welcome back to your fashion workspace.</h1>
+      <p class="auth-copy">
+        Pick up where you left off, revisit saved looks, and keep refining your design direction inside Avatar Couture.
+      </p>
+
+      <div class="auth-points">
+        <div>
+          <strong>Preview faster</strong>
+          <span>Jump back into your visual experiments without restarting your flow.</span>
+        </div>
+        <div>
+          <strong>Refine smarter</strong>
+          <span>Use guided recommendations to improve contrast, silhouette, and cohesion.</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="auth-card reveal">
+      <div class="auth-card-inner">
+        <p class="form-tag">Member Login</p>
+        <h2>Open Dashboard</h2>
+        <p class="form-copy">Log in to continue designing and exploring your style.</p>
+
+        <form class="auth-form" action="body.html" method="get" data-redirect-home="true">
+          <label>
+            <span>Username or Email</span>
+            <input type="text" name="identity" placeholder="Enter your username or email" required>
+          </label>
+
+          <label>
+            <span>Password</span>
+            <div class="password-field">
+              <input type="password" name="password" placeholder="Enter your password" required>
+              <button type="button" class="toggle-password" aria-label="Show password">Show</button>
+            </div>
+          </label>
+
+          <div class="form-meta">
+            <label class="checkbox">
+              <input type="checkbox" name="remember">
+              <span>Keep me signed in</span>
+            </label>
+            <a href="signup.html">Need access?</a>
+          </div>
+
+          <button type="submit" class="button button-primary button-block">Log In</button>
+        </form>
+
+        <p class="auth-switch">New here? <a href="signup.html">Create an account</a></p>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
