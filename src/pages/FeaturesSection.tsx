@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Layers, User, Sparkles, Palette, Share2, ShieldCheck } from "lucide-react";
 
-const ORBIT_STUDIOS_URL = "https://orbit-studios-euzpitney-orbitstudios26ng-7759s-projects.vercel.app/";
+const ORBIT_STUDIOS_URL = "https://orbit-studios.vercel.app/";
 
 const features = [
   { icon: Layers, title: "Layer System", desc: "Build outfits layer by layer with intuitive drag-and-drop." },

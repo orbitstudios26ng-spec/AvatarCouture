@@ -1,4 +1,4 @@
-const ORBIT_STUDIOS_URL = "https://orbit-studios-euzpitney-orbitstudios26ng-7759s-projects.vercel.app/";
+const ORBIT_STUDIOS_URL = "https://orbit-studios.vercel.app/";
 
 const Footer = () => (
   <footer className="py-12 px-6 border-t border-border">

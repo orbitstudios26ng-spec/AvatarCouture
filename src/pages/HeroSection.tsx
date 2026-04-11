@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import heroImage from "@/assets/hero-fashion.jpg";
 
-const ORBIT_STUDIOS_URL = "https://orbit-studios-euzpitney-orbitstudios26ng-7759s-projects.vercel.app/";
+const ORBIT_STUDIOS_URL = "https://orbit-studios.vercel.app/";
 
 const HeroSection = () => {
   return (

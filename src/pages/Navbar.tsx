@@ -2,7 +2,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 
-const ORBIT_STUDIOS_URL = "https://orbit-studios-euzpitney-orbitstudios26ng-7759s-projects.vercel.app/";
+const ORBIT_STUDIOS_URL = "https://orbit-studios.vercel.app/";
 
 const navItems = [
   { label: "Design Studio", href: "#design-studio" },
